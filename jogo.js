@@ -105,3 +105,23 @@ class Arquiteto extends Personagem{
         console.log("arquiteto defendeu")
     }
 }
+
+class Batalha1v1{
+    constructor(p1, p2){
+        this.p1 = p1
+        this.p2 = p2
+    }
+    adversario1(){
+        Math.random(Guerreiro, Mago, Arquiteto)
+    }
+    adversario2(){
+        Math.random(Guerreiro, Mago, Arquiteto)
+    }
+    statusbatalha(){
+    if(this.adversario1 = this.adversario2){
+        return Math.random(Guerreiro, Mago, Arquiteto);
+    } else {
+        return console.log("a batalha vai começar")
+        }
+    }
+}
