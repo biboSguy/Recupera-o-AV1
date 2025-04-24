@@ -15,6 +15,17 @@ class Guerreiro extends Personagem{
         this.defende = defende
     }
     ataca(){
+        if( //verifica a colisão do guerreiro com o mago
+            Mago.x < this.x + this.y &&
+            Mago.y + Mago.x > this.x &&
+            this.y < Mago.y + Mago.z &&
+            this.y + this.z > Mago.y 
+        ){
+            Mago.vida = 0
+            ctx.fillStyle = 'black'
+            ctx.font = '50px Arial'
+            ctx.fillText('GAME OVER', 50, 100)
+        }
         this.ataca = true 
         this.mana = -5
         console.log("guerreiro atacou")
@@ -37,7 +48,18 @@ class Mago extends Personagem{
         this.desvia = desvia
     }
     magia(){
-        this1.magia = true
+        if( //verifica a colisão do mago com o arquiteto
+            Arquiteto.x < this.x + this.y &&
+            Arquiteto.y + Arquiteto.x > this.x &&
+            this.y < Arquiteto.y + Arquiteto.z &&
+            this.y + this.z > Arquiteto.y 
+        ){
+            Arquiteto.vida = 0
+            ctx.fillStyle = 'black'
+            ctx.font = '50px Arial'
+            ctx.fillText('GAME OVER', 50, 100)
+        }
+        this.magia = true
         get = mana(),{
             set: 10
         }
@@ -58,6 +80,17 @@ class Arquiteto extends Personagem{
         this.defende = defende
     }
     ataca(){
+        if( //verifica a colisão do arquiteto com o guerreiro
+            Guerreiro.x < this.x + this.y &&
+            Guerreiro.y + Guerreiro.x > this.x &&
+            this.y < Guerreiro.y + Guerreiro.z &&
+            this.y + this.z > Guerreiro.y 
+        ){
+            Guerreiro.vida = 0
+            ctx.fillStyle = 'black'
+            ctx.font = '50px Arial'
+            ctx.fillText('GAME OVER', 50, 100)
+        }
         this.ataca = true
         get = força(),{
             set: 15
